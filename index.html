@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Piani di Abbonamento</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- INIZIO CONTENUTO PRINCIPALE -->
+    <main class="container">
+      <main class="container">
+        <!-- SELETTORE PIANO MENSILE/ANNUALE -->
+        <div class="plan-selector-container">
+          <h2 class="plan-selector-title">Scegli il tuo piano</h2>
+          <div class="plan-toggle-wrapper">
+            <span class="plan-option active">Mensile</span>
+            <label class="plan-toggle">
+              <input type="checkbox" id="planToggle">
+              <span class="plan-toggle-slider"></span>
+            </label>
+            <span class="plan-option">Annuale <span class="discount-badge">-20%</span></span>
+          </div>
+        </div>
+        
+        <!-- INIZIO SEZIONE CARDS -->
+        <div class="cards">
+          <!-- resto del codice... -->
+      <!-- INIZIO SEZIONE CARDS -->
+      <div class="cards">
+        <!-- INIZIO CARD PIANO FREE -->
+        <div class="card" id="free">
+          <!-- INTESTAZIONE CARD -->
+          <div class="header">
+            <img
+              src="public/icon-def/free.png"
+              alt="Selly Free"
+              id="card-icon"
+            />
+            <h2>Selly Free</h2>
+          </div>
+          <!-- DESCRIZIONE PIANO -->
+          <p class="description">
+            Risparmia tempo per 97€ su ogni offerta mentre collaboriamo <br />a
+            far crescere il tuo futuro acceleratore commerciale
+          </p>
+
+          <!-- FUNZIONALITÀ INCLUSE -->
+          <ul class="features">
+            <li>
+              <img src="public/icon-def/check.png" alt="check" /> Dashboard di
+              gestione contatti
+            </li>
+            <li>
+              <img src="public/icon-def/check.png" alt="check" />
+              Dimensionamento automatico dell'impianto
+            </li>
+          </ul>
+          <!-- FUNZIONALITÀ NON INCLUSE -->
+          <ul class="no-features">
+            <li>
+              <img src="public/icon-def/nope.png" alt="no" /> Scansione delle
+              bollette tramite AI
+            </li>
+            <li>
+              <img src="public/icon-def/nope.png" alt="no" /> Analisi
+              costi-benefici interagibile
+            </li>
+            <li>
+              <img src="public/icon-def/nope.png" alt="no" /> Analisi
+              costi-benefici brandizzata
+            </li>
+            <li>
+              <img src="public/icon-def/nope.png" alt="no" /> Mail al cliente
+              per preventivo brandizzata
+            </li>
+            <li>
+              <img src="public/icon-def/nope.png" alt="no" /> Classe energetica
+              pre e post intervento
+            </li>
+            <li>
+              <img src="public/icon-def/nope.png" alt="no" /> Raccolta dati
+              brandizzata
+            </li>
+            <li>
+              <img src="public/icon-def/nope.png" alt="no" /> Simulatore per
+              fotovoltaico > 20 kW
+            </li>
+          </ul>
+
+          <!-- SEZIONE PREZZO -->
+          <div class="price-container" id="gratuito">
+            <img
+              src="public/icon-def/soldi.png"
+              alt="money"
+              class="price-icon"
+            />
+            <p id="price-text" class="price">Gratuito</p>
+          </div>
+
+          <!-- PULSANTE AZIONE -->
+          <button class="btn" onclick="selectPlan('free')">
+            Inizia subito
+          </button>
+        </div>
+        <!-- FINE CARD PIANO FREE -->
+
+        <!-- INIZIO CARD PIANO STANDARD -->
+        <div class="card" id="standard">
+          <!-- INTESTAZIONE CARD -->
+          <div class="header">
+            <img
+              src="public/icon-def/standard.png"
+              alt="Selly Standard"
+              id="card-icon"
+            />
+            <h2>Selly Standard</h2>
+          </div>
+          <!-- DESCRIZIONE PIANO -->
+          <p class="description">
+            Distingui il brand e risparmia 97€ a preventivo con il simulatore
+            istantaneo di fotovoltaico e pompa di calore brandizzato
+          </p>
+          <!-- FUNZIONALITÀ INCLUSE -->
+          <ul class="features">
+            <li>
+              <img src="public/icon-def/check.png" alt="check" /> Raccolta dati
+              brandizzata
+            </li>
+            <li>
+              <img src="public/icon-def/check.png" alt="check" /> Classe
+              energetica pre e post intervento
+            </li>
+            <li>
+              <img src="public/icon-def/check.png" alt="check" />
+              Dimensionamento automatico dell'impianto
+            </li>
+            <li>
+              <img src="public/icon-def/check.png" alt="check" /> Dashboard di
+              gestione contatti
+            </li>
+            <li>
+              <img src="public/icon-def/check.png" alt="check" /> Analisi
+              costi-benefici brandizzata
+            </li>
+          </ul>
+          <!-- FUNZIONALITÀ NON INCLUSE -->
+          <ul class="no-features">
+            <li>
+              <img src="public/icon-def/nope.png" alt="no" /> Scansione delle
+              bollette tramite AI
+            </li>
+            <li>
+              <img src="public/icon-def/nope.png" alt="no" /> Analisi
+              costi-benefici interagibile
+            </li>
+            <li>
+              <img src="public/icon-def/nope.png" alt="no" /> Mail al cliente
+              per preventivo brandizzata
+            </li>
+            <li>
+              <img src="public/icon-def/nope.png" alt="no" /> Simulatore per
+              fotovoltaico > 20 kW
+            </li>
+          </ul>
+          <!-- SEZIONE PREZZO -->
+          <div class="price-container" id="abbonamento">
+            <img
+              src="public/icon-def/soldi.png"
+              alt="money"
+              class="price-icon"
+            />
+            <p id="price-text" class="price">199 € per 3 mesi</p>
+          </div>
+          <!-- PULSANTE AZIONE -->
+          <button class="btn" onclick="selectPlan('standard')">
+            Passa al Premium
+          </button>
+        </div>
+        <!-- FINE CARD PIANO STANDARD -->
+
+        <!-- INIZIO CARD PIANO PREMIUM -->
+        <div class="card" id="premium">
+          <!-- INTESTAZIONE CARD -->
+          <div class="header">
+            <img
+              src="public/icon-def/premium.png"
+              alt="Selly Premium"
+              id="card-icon"
+            />
+            <h2>Selly Premium</h2>
+          </div>
+          <!-- DESCRIZIONE PIANO -->
+          <p class="description">
+            Aumenta le vendite trasmettendo eccellenza con il simulatore
+            istantaneo di fotovoltaico e pompa di calore brandizzato ed
+            interagibile
+          </p>
+          <!-- FUNZIONALITÀ INCLUSE -->
+          <ul class="features">
+            <li>
+              <img src="public/icon-def/check.png" alt="check" /> Raccolta dati
+              brandizzata
+            </li>
+            <li>
+              <img src="public/icon-def/check.png" alt="check" /> Scansione
+              delle bollette tramite AI illimitata
+            </li>
+            <li>
+              <img src="public/icon-def/check.png" alt="check" />
+              Dimensionamento automatico dell'impianto
+            </li>
+            <li>
+              <img src="public/icon-def/check.png" alt="check" /> Analisi
+              costi-benefici interagibile
+            </li>
+            <li>
+              <img src="public/icon-def/check.png" alt="check" /> Analisi
+              costi-benefici brandizzata
+            </li>
+            <li>
+              <img src="public/icon-def/check.png" alt="check" /> Mail al
+              cliente per preventivo brandizzata
+            </li>
+            <li>
+              <img src="public/icon-def/check.png" alt="check" /> Classe
+              energetica pre e post intervento
+            </li>
+            <li>
+              <img src="public/icon-def/check.png" alt="check" /> Dashboard di
+              gestione contatti
+            </li>
+            <li>
+              <img src="public/icon-def/check.png" alt="check" /> Simulatore per
+              fotovoltaico > 20 kW
+            </li>
+          </ul>
+          <!-- SEZIONE PREZZO -->
+          <div class="price-container" id="premium-price">
+            <img
+              src="public/icon-def/soldi.png"
+              alt="money"
+              class="price-icon"
+            />
+            <p id="price-text" class="price">299 € per 3 mesi</p>
+          </div>
+          <!-- PULSANTE AZIONE -->
+          <button class="btn" onclick="selectPlan('premium')">
+            Contatta il team sales
+          </button>
+        </div>
+        <!-- FINE CARD PIANO PREMIUM -->
+      </div>
+      <!-- FINE SEZIONE CARDS -->
+    </main>
+    <!-- FINE CONTENUTO PRINCIPALE -->
+
+    <!-- SCRIPT JAVASCRIPT -->
+    <script src="scripts.js"></script>
+  </body>
+</html>
