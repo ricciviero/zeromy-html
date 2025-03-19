@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preventivo Zeromy</title>
+    <!-- Inclusione Font Roboto da Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Inclusione di Font Awesome per icone migliori -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Collegamento al foglio di stile CSS principale -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Contenitore principale -->
+    <div class="container">
+      <!-- Griglia delle cards -->
+      <div class="cards-grid">
+        <!-- Prima card - Costi attuali -->
+        <div class="card card--current">
+          <div class="card__header">
+            <div class="card__title">
+              <span class="card__greeting">Caro</span>
+              <span class="card__name">Samuele</span>,
+              <div class="card__subtitle">
+                <span>ecco i suoi</span>
+                <span class="card__highlight">costi attuali</span>
+              </div>
+            </div>
+
+            <div class="card__price-range">
+              <div class="card__price-from">
+                da <span class="card__price">2150</span>
+              </div>
+              <div class="card__price-to">
+                a <span class="card__price">2457€</span>
+              </div>
+              <div class="card__period">/annui</div>
+            </div>
+
+            <div class="card__costs">
+              <div class="cost-item">
+                <div class="cost-item__icon">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <div class="cost-item__details">
+                  <div class="cost-item__label">Energia</div>
+                  <div class="cost-item__value">1037€</div>
+                </div>
+              </div>
+
+              <div class="cost-item">
+                <div class="cost-item__icon">
+                  <i class="fas fa-temperature-high"></i>
+                </div>
+                <div class="cost-item__details">
+                  <div class="cost-item__label">Calore</div>
+                  <div class="cost-item__value">1004€</div>
+                </div>
+              </div>
+
+              <div class="cost-item">
+                <div class="cost-item__icon">
+                  <i class="fas fa-file-invoice"></i>
+                </div>
+                <div class="cost-item__details">
+                  <div class="cost-item__label">Canoni</div>
+                  <div class="cost-item__value">108€</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card__params">
+            <h3 class="params__title">Parametri utilizzati</h3>
+
+            <div class="params__group">
+              <div class="param-item">
+                <div class="param-item__icon">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <div class="param-item__details">
+                  <div class="param-item__label">Energia</div>
+                  <div class="param-item__value">3600 kWh</div>
+                </div>
+              </div>
+
+              <div class="param-item">
+                <div class="param-item__icon">
+                  <i class="fas fa-temperature-high"></i>
+                </div>
+                <div class="param-item__details">
+                  <div class="param-item__label">Combustibile</div>
+                  <div class="param-item__value">1200 unità</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="params__group">
+              <div class="price-range">
+                <div class="price-range__label">Prezzo energia</div>
+                <div class="price-range__values">
+                  <span>da <span class="price-range__value">0.288</span></span>
+                  <span
+                    >a <span class="price-range__value">0.332</span> €/kWh</span
+                  >
+                </div>
+              </div>
+
+              <div class="price-range">
+                <div class="price-range__label">Prezzo combustibile</div>
+                <div class="price-range__values">
+                  <span>da <span class="price-range__value">0.837</span></span>
+                  <span
+                    >a
+                    <span class="price-range__value">0.963</span> €/unità</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card__footer">
+            <div class="eco-info">
+              <div class="eco-info__icon">
+                <i class="fas fa-tree"></i>
+              </div>
+              <div class="eco-info__value">-81 alberi</div>
+            </div>
+
+            <div class="energy-class">
+              <div class="energy-class__icon">
+                <i class="fas fa-tag"></i>
+              </div>
+              <div class="energy-class__details">
+                <span class="energy-class__label">Classe</span>
+                <span class="energy-class__value">E</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seconda card - Proposta Zeromy -->
+        <div class="card card--proposal">
+          <div class="card__header">
+            <div class="card__title">
+              <div class="card__subtitle">
+                <span>ecco la nostra</span>
+                <span class="card__highlight">proposta</span>
+              </div>
+            </div>
+
+            <div class="card__price-range card__price-range--single">
+              <div class="card__price-total">
+                <span class="card__price card__price--large">1850€</span>
+              </div>
+              <div class="card__period">/annui</div>
+              <div class="card__savings">
+                Risparmio: <span class="card__price">607€</span>
+              </div>
+            </div>
+
+            <div class="card__costs">
+              <div class="cost-item">
+                <div class="cost-item__icon">
+                  <i class="fas fa-bolt"></i>
+                </div>
+                <div class="cost-item__details">
+                  <div class="cost-item__label">Energia</div>
+                  <div class="cost-item__value">850€</div>
+                </div>
+              </div>
+
+              <div class="cost-item">
+                <div class="cost-item__icon">
+                  <i class="fas fa-temperature-high"></i>
+                </div>
+                <div class="cost-item__details">
+                  <div class="cost-item__label">Calore</div>
+                  <div class="cost-item__value">920€</div>
+                </div>
+              </div>
+
+              <div class="cost-item">
+                <div class="cost-item__icon">
+                  <i class="fas fa-file-invoice"></i>
+                </div>
+                <div class="cost-item__details">
+                  <div class="cost-item__label">Canoni</div>
+                  <div class="cost-item__value">80€</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card__features">
+            <h3 class="features__title">Incluso nel piano</h3>
+
+            <div class="feature-item">
+              <div class="feature-item__icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="feature-item__text">Prezzo bloccato per 24 mesi</div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-item__icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="feature-item__text">
+                Energia 100% da fonti rinnovabili
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <div class="feature-item__icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="feature-item__text">
+                Assistenza dedicata 7 giorni su 7
+              </div>
+            </div>
+          </div>
+
+          <div class="card__footer">
+            <div class="eco-info eco-info--positive">
+              <div class="eco-info__icon">
+                <i class="fas fa-tree"></i>
+              </div>
+              <div class="eco-info__value">+45 alberi</div>
+            </div>
+
+            <div class="energy-class">
+              <div class="energy-class__icon">
+                <i class="fas fa-tag"></i>
+              </div>
+              <div class="energy-class__details">
+                <span class="energy-class__label">Classe</span>
+                <span class="energy-class__value energy-class__value--better"
+                  >B</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
