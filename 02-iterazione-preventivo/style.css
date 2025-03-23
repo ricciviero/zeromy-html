@@ -415,6 +415,483 @@ body {
 }
 
 /* ======================================================
+   SEZIONE COMPONENTI ENERGETICI
+   Stile moderno e accattivante
+   ====================================================== */
+.energy-components {
+  margin: var(--spacing-xl) 0 var(--spacing-xl) * 2;
+  width: 100%;
+  position: relative;
+  padding: var(--spacing-xl) 0;
+}
+
+.energy-components::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  border-radius: 2px;
+}
+
+.energy-components__header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl) * 1.5;
+  position: relative;
+}
+
+.energy-components__title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  display: inline-block;
+  position: relative;
+  letter-spacing: -0.5px;
+}
+
+.energy-components__title::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-secondary);
+  opacity: 0.3;
+}
+
+/* Grid per i componenti */
+.energy-components__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-xl);
+  width: 100%;
+}
+
+/* ======================================================
+     STILE SINGOLO COMPONENTE
+     ====================================================== */
+.energy-component {
+  background-color: var(--color-white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  min-height: 125px;
+  position: relative;
+  border: none;
+}
+
+.energy-component:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.energy-component::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--color-secondary),
+    var(--color-secondary-dark)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.energy-component:hover::after {
+  opacity: 1;
+}
+
+.energy-component__icon {
+  width: 90px;
+  height: 125px;
+  min-width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-secondary-light);
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.energy-component__icon::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transform: translate(30px, 30px);
+}
+
+.energy-component__icon img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.energy-component:hover .energy-component__icon img {
+  transform: scale(1.1);
+}
+
+.energy-component__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md) var(--spacing-lg);
+  position: relative;
+}
+
+.energy-component__name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.energy-component:hover .energy-component__name {
+  color: var(--color-secondary);
+}
+
+.energy-component__value {
+  font-size: 0.95rem;
+  color: var(--color-gray);
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+}
+
+.energy-component__highlight {
+  color: var(--color-secondary);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-left: 4px;
+  position: relative;
+}
+
+.energy-component__highlight::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-secondary);
+  opacity: 0.2;
+}
+
+.energy-component__edit {
+  align-self: flex-start;
+  background-color: transparent;
+  color: var(--color-secondary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: 1px solid var(--color-secondary-light);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.energy-component__edit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--color-secondary);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.energy-component__edit:hover {
+  color: white;
+}
+
+.energy-component__edit:hover::before {
+  width: 100%;
+}
+
+/* ======================================================
+     STILI SPECIFICI PER OGNI COMPONENTE
+     ====================================================== */
+
+/* Fotovoltaico */
+#fotovoltaico .energy-component__icon {
+  background-color: rgba(0, 82, 204, 0.1);
+}
+
+#fotovoltaico .energy-component__highlight {
+  color: #0052cc;
+}
+
+#fotovoltaico .energy-component__edit {
+  border-color: rgba(0, 82, 204, 0.3);
+  color: #0052cc;
+}
+
+#fotovoltaico .energy-component__edit::before {
+  background-color: #0052cc;
+}
+
+#fotovoltaico::after {
+  background: linear-gradient(to bottom, #0052cc, #003d99);
+}
+
+/* Batteria */
+#batteria .energy-component__icon {
+  background-color: rgba(232, 50, 50, 0.1);
+}
+
+#batteria .energy-component__highlight {
+  color: #e83232;
+}
+
+#batteria .energy-component__edit {
+  border-color: rgba(232, 50, 50, 0.3);
+  color: #e83232;
+}
+
+#batteria .energy-component__edit::before {
+  background-color: #e83232;
+}
+
+#batteria::after {
+  background: linear-gradient(to bottom, #e83232, #c62828);
+}
+
+/* Componenti disattivati/zero */
+#valvole,
+#split {
+  opacity: 0.95;
+  background-color: #f9f9f9;
+}
+
+#valvole .energy-component__icon,
+#split .energy-component__icon {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+#valvole .energy-component__name,
+#split .energy-component__name {
+  color: var(--color-gray);
+}
+
+#valvole .energy-component__edit,
+#split .energy-component__edit {
+  border-color: rgba(0, 0, 0, 0.1);
+  color: var(--color-gray);
+}
+
+#valvole .energy-component__edit::before,
+#split .energy-component__edit::before {
+  background-color: var(--color-gray);
+}
+
+#valvole::after,
+#split::after {
+  background: linear-gradient(to bottom, var(--color-gray), #555);
+}
+
+/* Colonnina auto elettrica */
+#colonnina .energy-component__icon {
+  background-color: rgba(56, 142, 60, 0.1);
+}
+
+#colonnina::after {
+  background: linear-gradient(to bottom, #388e3c, #2e7d32);
+}
+
+#colonnina:hover .energy-component__name {
+  color: #388e3c;
+}
+
+#colonnina .energy-component__edit {
+  border-color: rgba(56, 142, 60, 0.3);
+  color: #388e3c;
+}
+
+#colonnina .energy-component__edit::before {
+  background-color: #388e3c;
+}
+
+/* Scaldacqua */
+#scaldacqua .energy-component__icon {
+  background-color: rgba(26, 115, 232, 0.1);
+}
+
+#scaldacqua::after {
+  background: linear-gradient(to bottom, #1a73e8, #1a5fb4);
+}
+
+#scaldacqua:hover .energy-component__name {
+  color: #1a73e8;
+}
+
+#scaldacqua .energy-component__edit {
+  border-color: rgba(26, 115, 232, 0.3);
+  color: #1a73e8;
+}
+
+#scaldacqua .energy-component__edit::before {
+  background-color: #1a73e8;
+}
+
+/* Piastre a induzione */
+#piastre .energy-component__icon {
+  background-color: rgba(244, 67, 54, 0.1);
+}
+
+#piastre::after {
+  background: linear-gradient(to bottom, #f44336, #d32f2f);
+}
+
+#piastre:hover .energy-component__name {
+  color: #f44336;
+}
+
+#piastre .energy-component__edit {
+  border-color: rgba(244, 67, 54, 0.3);
+  color: #f44336;
+}
+
+#piastre .energy-component__edit::before {
+  background-color: #f44336;
+}
+
+/* Pompa di calore */
+#pompa .energy-component__icon {
+  background-color: rgba(124, 77, 255, 0.1);
+}
+
+#pompa::after {
+  background: linear-gradient(to bottom, #7c4dff, #6200ea);
+}
+
+#pompa:hover .energy-component__name {
+  color: #7c4dff;
+}
+
+#pompa .energy-component__edit {
+  border-color: rgba(124, 77, 255, 0.3);
+  color: #7c4dff;
+}
+
+#pompa .energy-component__edit::before {
+  background-color: #7c4dff;
+}
+
+/* ======================================================
+     RESPONSIVE
+     ====================================================== */
+@media (max-width: 992px) {
+  .energy-components__grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .energy-components__title {
+    font-size: 1.75rem;
+  }
+
+  .energy-components__grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .energy-component {
+    min-height: 110px;
+  }
+
+  .energy-component__icon {
+    width: 80px;
+    min-width: 80px;
+    height: 110px;
+  }
+
+  .energy-component__icon img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .energy-components__title {
+    font-size: 1.5rem;
+  }
+
+  .energy-component {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .energy-component__icon {
+    width: 70px;
+    min-width: 70px;
+    height: 100px;
+  }
+
+  .energy-component__icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .energy-component__content {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .energy-component__name {
+    font-size: 1rem;
+  }
+
+  .energy-component__value {
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .energy-component__highlight {
+    font-size: 1.1rem;
+  }
+
+  .energy-component__edit {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ======================================================
      RESPONSIVE
      ====================================================== */
 @media (max-width: 768px) {
