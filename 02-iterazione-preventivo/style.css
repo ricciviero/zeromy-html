@@ -9,6 +9,7 @@
   --color-primary-dark: #b30000;
   --color-secondary: #0070c0;
   --color-secondary-light: #e6f2ff;
+  --color-secondary-dark: #005a9e;
 
   /* Colori neutri */
   --color-white: #ffffff;
@@ -43,9 +44,9 @@
 }
 
 /* ======================================================
-     RESET E STILI BASE
-     Reset di margini, padding e box model
-     ====================================================== */
+       RESET E STILI BASE
+       Reset di margini, padding e box model
+       ====================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -62,8 +63,8 @@ body {
 }
 
 /* ======================================================
-     CONTAINER E LAYOUT PRINCIPALE
-     ====================================================== */
+       CONTAINER E LAYOUT PRINCIPALE
+       ====================================================== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -78,9 +79,9 @@ body {
 }
 
 /* ======================================================
-     CARD COMUNE
-     Stili base che si applicano a tutte le card
-     ====================================================== */
+       CARD COMUNE
+       Stili base che si applicano a tutte le card
+       ====================================================== */
 .card {
   background-color: var(--color-white);
   border-radius: var(--radius-lg);
@@ -109,8 +110,8 @@ body {
 }
 
 /* ======================================================
-     CARD HEADER
-     ====================================================== */
+       CARD HEADER
+       ====================================================== */
 .card__header {
   padding: var(--spacing-lg);
   text-align: center;
@@ -144,8 +145,8 @@ body {
 }
 
 /* ======================================================
-     PREZZI
-     ====================================================== */
+       PREZZI
+       ====================================================== */
 .card__price-range {
   margin: var(--spacing-lg) 0;
   font-size: 1.125rem;
@@ -184,8 +185,8 @@ body {
 }
 
 /* ======================================================
-     COSTI E PARAMETRI
-     ====================================================== */
+       COSTI E PARAMETRI
+       ====================================================== */
 .card__costs {
   display: flex;
   flex-wrap: wrap;
@@ -242,8 +243,8 @@ body {
 }
 
 /* ======================================================
-     PARAMETRI
-     ====================================================== */
+       PARAMETRI
+       ====================================================== */
 .card__params {
   padding: var(--spacing-lg);
   background-color: rgba(255, 255, 255, 0.4);
@@ -322,8 +323,8 @@ body {
 }
 
 /* ======================================================
-     FUNZIONALITÀ
-     ====================================================== */
+       FUNZIONALITÀ
+       ====================================================== */
 .card__features {
   padding: var(--spacing-lg);
   background-color: rgba(255, 255, 255, 0.4);
@@ -355,8 +356,8 @@ body {
 }
 
 /* ======================================================
-     FOOTER DELLA CARD
-     ====================================================== */
+       FOOTER DELLA CARD
+       ====================================================== */
 .card__footer {
   padding: var(--spacing-lg);
   display: flex;
@@ -415,9 +416,9 @@ body {
 }
 
 /* ======================================================
-   SEZIONE COMPONENTI ENERGETICI
-   Stile moderno e accattivante
-   ====================================================== */
+     SEZIONE COMPONENTI ENERGETICI
+     Stile moderno e accattivante
+     ====================================================== */
 .energy-components {
   margin: var(--spacing-xl) 0 var(--spacing-xl) * 2;
   width: 100%;
@@ -447,6 +448,13 @@ body {
   position: relative;
 }
 
+.energy-components__h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-lg);
+}
+
 .energy-components__title {
   font-size: 2rem;
   font-weight: 600;
@@ -454,6 +462,7 @@ body {
   display: inline-block;
   position: relative;
   letter-spacing: -0.5px;
+  margin-bottom: var(--spacing-lg);
 }
 
 .energy-components__title::after {
@@ -476,8 +485,8 @@ body {
 }
 
 /* ======================================================
-     STILE SINGOLO COMPONENTE
-     ====================================================== */
+       STILE SINGOLO COMPONENTE
+       ====================================================== */
 .energy-component {
   background-color: var(--color-white);
   border-radius: 16px;
@@ -542,17 +551,16 @@ body {
   transform: translate(30px, 30px);
 }
 
-.energy-component__icon img {
-  width: 55px;
-  height: 55px;
-  object-fit: contain;
+/* Stile per le icone Font Awesome */
+.energy-component__icon i {
+  font-size: 40px; /* Dimensione grande per le icone */
   position: relative;
   z-index: 2;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
   transition: transform 0.3s ease;
 }
 
-.energy-component:hover .energy-component__icon img {
+.energy-component:hover .energy-component__icon i {
   transform: scale(1.1);
 }
 
@@ -621,18 +629,6 @@ body {
   z-index: 1;
 }
 
-.energy-component__edit::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: var(--color-secondary);
-  transition: width 0.3s ease;
-  z-index: -1;
-}
-
 .energy-component__edit:hover {
   color: white;
 }
@@ -642,8 +638,38 @@ body {
 }
 
 /* ======================================================
-     STILI SPECIFICI PER OGNI COMPONENTE
-     ====================================================== */
+       STILI SPECIFICI PER OGNI COMPONENTE
+       ====================================================== */
+
+/* Colori specifici per le icone di ciascun componente */
+#fotovoltaico .energy-component__icon i {
+  color: #0052cc;
+}
+
+#batteria .energy-component__icon i {
+  color: #e83232;
+}
+
+#valvole .energy-component__icon i,
+#split .energy-component__icon i {
+  color: #767676;
+}
+
+#colonnina .energy-component__icon i {
+  color: #388e3c;
+}
+
+#scaldacqua .energy-component__icon i {
+  color: #1a73e8;
+}
+
+#piastre .energy-component__icon i {
+  color: #f44336;
+}
+
+#pompa .energy-component__icon i {
+  color: #7c4dff;
+}
 
 /* Fotovoltaico */
 #fotovoltaico .energy-component__icon {
@@ -811,89 +837,19 @@ body {
 }
 
 /* ======================================================
-     RESPONSIVE
-     ====================================================== */
+       RESPONSIVE
+       ====================================================== */
 @media (max-width: 992px) {
   .energy-components__grid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-lg);
   }
-}
 
-@media (max-width: 768px) {
-  .energy-components__title {
-    font-size: 1.75rem;
-  }
-
-  .energy-components__grid {
-    grid-template-columns: 1fr;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .energy-component {
-    min-height: 110px;
-  }
-
-  .energy-component__icon {
-    width: 80px;
-    min-width: 80px;
-    height: 110px;
-  }
-
-  .energy-component__icon img {
-    width: 48px;
-    height: 48px;
+  .energy-components__h1 {
+    font-size: 2.2rem;
   }
 }
 
-@media (max-width: 480px) {
-  .energy-components__title {
-    font-size: 1.5rem;
-  }
-
-  .energy-component {
-    flex-direction: row;
-    text-align: left;
-  }
-
-  .energy-component__icon {
-    width: 70px;
-    min-width: 70px;
-    height: 100px;
-  }
-
-  .energy-component__icon img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .energy-component__content {
-    padding: var(--spacing-sm) var(--spacing-md);
-  }
-
-  .energy-component__name {
-    font-size: 1rem;
-  }
-
-  .energy-component__value {
-    font-size: 0.9rem;
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .energy-component__highlight {
-    font-size: 1.1rem;
-  }
-
-  .energy-component__edit {
-    padding: 6px 12px;
-    font-size: 0.8rem;
-  }
-}
-
-/* ======================================================
-     RESPONSIVE
-     ====================================================== */
 @media (max-width: 768px) {
   .cards-grid {
     grid-template-columns: 1fr;
@@ -927,6 +883,34 @@ body {
   .energy-class__value {
     font-size: 1.125rem;
   }
+
+  .energy-components__h1 {
+    font-size: 1.9rem;
+  }
+
+  .energy-components__title {
+    font-size: 1.75rem;
+  }
+
+  .energy-components__grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .energy-component {
+    min-height: 110px;
+  }
+
+  .energy-component__icon {
+    width: 80px;
+    min-width: 80px;
+    height: 110px;
+  }
+
+  .energy-component__icon i {
+    font-size: 32px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -943,9 +927,50 @@ body {
     flex-direction: column;
     gap: var(--spacing-md);
   }
-}
 
-/* Definizione della proprietà mancante */
-:root {
-  --color-secondary-dark: #005a9e;
+  .energy-components__h1 {
+    font-size: 1.65rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .energy-components__title {
+    font-size: 1.5rem;
+  }
+
+  .energy-component {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .energy-component__icon {
+    width: 70px;
+    min-width: 70px;
+    height: 100px;
+  }
+
+  .energy-component__icon i {
+    font-size: 28px;
+  }
+
+  .energy-component__content {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .energy-component__name {
+    font-size: 1rem;
+  }
+
+  .energy-component__value {
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .energy-component__highlight {
+    font-size: 1.1rem;
+  }
+
+  .energy-component__edit {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
 }
